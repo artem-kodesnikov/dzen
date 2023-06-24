@@ -1,0 +1,14 @@
+.search_input {
+  color: black;
+  font-weight: 500;
+  background-color: #80808021;
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.1);
+  max-height: 30px;
+  width: 300px;
+}
+
+@media (max-width: 992px) {
+  .menu_collaps {
+    display: flex;
+  }
+}
