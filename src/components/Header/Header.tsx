@@ -7,7 +7,7 @@ import style from './header.module.css';
 export const Header = () => {
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar className={style.header} bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="#">Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar" />
