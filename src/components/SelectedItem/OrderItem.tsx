@@ -1,15 +1,15 @@
 import React, { FC } from 'react';
 import { Order } from '../../types/order.type';
-import style from './SelectedOrderItem.module.css';
+import style from './OrderItem.module.css';
 import { months } from '../../values/month';
 
 type Props = {
   order: Order,
-  selectedOrder: boolean,
-  handleOpenOrder: () => void
+  selectedOrder: number,
+  handleOpenOrder: (num: number) => void
 }
 
-export const SelectedItem: FC<Props> = ({ order, handleOpenOrder, selectedOrder }) => {
+export const OrderItem: FC<Props> = ({ order, handleOpenOrder, selectedOrder }) => {
   const date = order.date.split(' ')[0].split('-');
   const day = date[2];
   const month = months.find((el) => el.id === date[1])?.value.slice(0, 3);
@@ -17,8 +17,8 @@ export const SelectedItem: FC<Props> = ({ order, handleOpenOrder, selectedOrder 
   const totalUsd = order.products.reduce((acc, cur) => acc + cur.price[0].value, 0);
   const totalUah = order.products.reduce((acc, cur) => acc + cur.price[1].value, 0);
   return (
-    <div className={style.order_container}>
-      <p hidden={selectedOrder} onClick={handleOpenOrder} className={style.order_title}>
+    <div onClick={() => handleOpenOrder(order.id)} className={style.order_container}>
+      <p hidden={selectedOrder > 0} className={style.order_title}>
         {order.title}
       </p>
       <div className={style.order_list__icon}>
@@ -32,11 +32,14 @@ export const SelectedItem: FC<Props> = ({ order, handleOpenOrder, selectedOrder 
         <p className={style.order_value__format}>06/17</p>
         <p>{`${day}/${month}/${year}`}</p>
       </div>
-      <div hidden={selectedOrder} className={style.order_total__cost}>
+      <div hidden={selectedOrder > 0} className={style.order_total__cost}>
         <p className={style.order_value__format}>{totalUsd}$</p>
         <p>{totalUah} &#8372;</p>
       </div>
-      <img hidden={selectedOrder} className={style.order_delete__icon} src="./img/delete.svg" alt="delete icon" />
+      <img hidden={selectedOrder > 0} className={style.order_delete__icon} src="./img/delete.svg" alt="delete icon" />
+      <div className={style.active_arrow} hidden={selectedOrder !== order.id}>
+        &gt;
+      </div>
     </div>
   )
 }

@@ -10,6 +10,7 @@
 .content {
   display: flex;
   align-items: flex-start;
-  margin-top: 60px;
   justify-content: center;
+  background-color: lightgray;
+  padding-top: 60px;
 }

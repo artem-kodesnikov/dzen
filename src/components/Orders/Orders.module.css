@@ -53,11 +53,11 @@
 }
 
 .selectedItem > .order_row{
-  width: 25%;
+  width: 35%;
 }
 
 .selectedItem > .items_content_container{
-  width: 75%;
+  width: 65%;
 }
 
 .selectedItemw > .items_content_container{
@@ -75,4 +75,8 @@
   transition: all 0.5s ease;
   overflow: hidden;
   max-height: 200px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #fff;
 }
