@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import './App.css';
 import { Header } from './components/Header/Header';
 import { NavSideBar } from './components/NavSideBar/NavSideBar';
@@ -11,8 +12,10 @@ function App() {
         <Header />
         <div className="d-flex flex-grow-1">
           <NavSideBar />
-          <div className="flex-grow-1">
-            <MainRoutes />
+          <div className="flex-grow-1 content">
+            <Container>
+              <MainRoutes />
+            </Container>
           </div>
         </div>
       </div>

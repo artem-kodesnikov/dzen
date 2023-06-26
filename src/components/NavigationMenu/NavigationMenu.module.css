@@ -1,7 +1,13 @@
 .nav_link__active {
-  border-bottom: 1px solid green;
+  color: black;
+  font-weight: 500;
+  font-size: 18px;
+  border-bottom: 2px solid green;
   text-decoration: none;
 }
 .nav_link {
+  color: black;
+  font-weight: 500;
+  font-size: 18px;
   text-decoration: none;
 }
