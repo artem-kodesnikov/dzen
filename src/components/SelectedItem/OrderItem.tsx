@@ -6,10 +6,12 @@ import { months } from '../../values/month';
 type Props = {
   order: Order,
   selectedOrder: number,
-  handleOpenOrder: (num: number) => void
+  handleOpenOrder: (num: number) => void,
+  setModalShow: (value: boolean) => void,
+  handleDelete: (id: number) => void
 }
 
-export const OrderItem: FC<Props> = ({ order, handleOpenOrder, selectedOrder }) => {
+export const OrderItem: FC<Props> = ({ order, handleOpenOrder, selectedOrder, setModalShow, handleDelete }) => {
   const date = order.date.split(' ')[0].split('-');
   const day = date[2];
   const month = months.find((el) => el.id === date[1])?.value.slice(0, 3);
@@ -36,7 +38,7 @@ export const OrderItem: FC<Props> = ({ order, handleOpenOrder, selectedOrder }) 
         <p className={style.order_value__format}>{totalUsd}$</p>
         <p>{totalUah} &#8372;</p>
       </div>
-      <img hidden={selectedOrder > 0} className={style.order_delete__icon} src="./img/delete.svg" alt="delete icon" />
+      <img onClick={() => handleDelete(order.id)} hidden={selectedOrder > 0} className={style.order_delete__icon} src="./img/delete.svg" alt="delete icon" />
       <div className={style.active_arrow} hidden={selectedOrder !== order.id}>
         &gt;
       </div>

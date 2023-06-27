@@ -1,0 +1,32 @@
+.modal_footer {
+  background-color: #30b330c9;
+}
+
+.delete_btn {
+  border-radius: 25px;
+  background-color: #fff;
+  color: red;
+  border: none;
+}
+
+.delete_btn:hover {
+  background-color: #e2e1e1;
+  color: red;
+}
+
+.delete_btn:active {
+  background-color: #e2e1e1;
+  color: red;
+}
+
+.close_btn {
+  background-color: #30b33000;
+  border-radius: 25px;
+  color: #fff;
+  border: none;
+}
+
+.close_btn:hover {
+  background-color: #30b33000;
+  color: red
+}

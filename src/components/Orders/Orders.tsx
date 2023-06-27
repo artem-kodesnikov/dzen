@@ -1,19 +1,32 @@
 import React, { useState } from 'react';
 import { OrderItem } from '../SelectedItem/OrderItem';
 import style from './Orders.module.css';
-import { orders } from '../../fake-data/data'
 import { OrderProduct } from '../OrderProducts/OrderProduct';
+import { DeleteModal } from '../DeleteModal/DeleteModal';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { selectOrder } from '../../features/ordersSlice';
 
 export const Orders = () => {
-  const [selectedOrder, setSelectedOrder] = useState(0);
+  const [modalShow, setModalShow] = useState(false);
+  const [deleteOrderId, setDeleteOrderId] = useState(0);
+  const dispatch = useAppDispatch()
+  const orders = useAppSelector((state) => state.orders.orders);
+  const selectedOrder = useAppSelector((state) => state.orders.selectedOrder);
+
   const orderProducts = orders.find((order) => order.id === selectedOrder)?.products
-  console.log(orderProducts)
+
   const handleOpenOrder = (id: number) => {
-    setSelectedOrder(id);
+    dispatch(selectOrder(id));
   };
+
   const handleCloseOrder = () => {
-    setSelectedOrder(0);
+    dispatch(selectOrder(0));
   };
+
+  const OpenDeleteModal = (id: number) => {
+    setModalShow(true)
+    setDeleteOrderId(id)
+  }
 
   return (
     <div className={style.orders_wrapper}>
@@ -31,6 +44,8 @@ export const Orders = () => {
                 key={order.id}
                 selectedOrder={selectedOrder}
                 handleOpenOrder={handleOpenOrder}
+                setModalShow={setModalShow}
+                handleDelete={OpenDeleteModal}
                 order={order}
               />
             )}
@@ -48,6 +63,11 @@ export const Orders = () => {
             </div>
             <div onClick={handleCloseOrder} className={style.products_close}>X</div>
           </div>
+          <DeleteModal
+            modalShow={modalShow}
+            setModalShow={setModalShow}
+            deleteOrderId={deleteOrderId}
+          />
         </div>
       </div>
     </div>
