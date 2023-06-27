@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { Order } from '../../types/order.type';
+import { Order } from '../../../types/order.type';
 import style from './OrderItem.module.css';
-import { months } from '../../values/month';
+import { months } from '../../../values/month';
 
 type Props = {
   order: Order,

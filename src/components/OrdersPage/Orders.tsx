@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { OrderItem } from '../OrderItem/OrderItem';
+import { OrderItem } from './OrderItem/OrderItem';
 import style from './Orders.module.css';
 import { DeleteModal } from '../common/DeleteModal/DeleteModal';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { addProductToOrder, selectOrder } from '../../features/ordersSlice';
 import { Product } from '../../types/product.type';
-import { OrderProductList } from '../OrderProductsList/OrderProductList';
+import { OrderProductList } from './OrderProductsList/OrderProductList';
 
 export const Orders = () => {
   const [modalShow, setModalShow] = useState(false);
