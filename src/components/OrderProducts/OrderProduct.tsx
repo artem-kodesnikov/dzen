@@ -1,4 +1,6 @@
 import React, { FC } from 'react';
+import { removeProductFromOrder } from '../../features/ordersSlice';
+import { useAppDispatch } from '../../store/hooks';
 import { Product } from '../../types/product.type';
 import style from './OrderProduct.module.css';
 
@@ -7,6 +9,11 @@ type Props = {
 }
 
 export const OrderProduct: FC<Props> = ({ product }) => {
+  const dispatch = useAppDispatch();
+
+  const handleDeleteProduct = () => {
+    dispatch(removeProductFromOrder(product.id))
+  }
   return (
     <>
       <div className={style.product_wrapper}>
@@ -25,7 +32,7 @@ export const OrderProduct: FC<Props> = ({ product }) => {
         <div className={style.available}>
           Available
         </div>
-        <img className={style.delete_icon} src="./img/delete.svg" alt="delete icon" />
+        <img onClick={handleDeleteProduct} className={style.delete_icon} src="./img/delete.svg" alt="delete icon" />
       </div>
       <div className={style.divider}></div>
     </>

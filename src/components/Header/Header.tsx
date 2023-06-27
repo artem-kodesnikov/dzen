@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import { TopMenu } from '../TopMenu/TopMenu';
 import style from './header.module.css';
 
-
 export const Header = () => {
-
   return (
     <Navbar className={style.header} bg="light" expand="lg">
       <Container>

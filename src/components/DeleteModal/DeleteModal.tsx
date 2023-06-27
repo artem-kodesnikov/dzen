@@ -39,10 +39,13 @@ export const DeleteModal: FC<Props> = ({ setModalShow, modalShow, deleteOrderId 
       <Modal.Body>
         <h4>{order?.title}</h4>
         <p>
-          {order?.description}
+          Description: {order?.description}
         </p>
         <p>
-          {order?.date}
+          Created at: {order?.date}
+        </p>
+        <p>
+          {order?.products.length} products
         </p>
       </Modal.Body>
       <Modal.Footer className={style.modal_footer}>

@@ -4,7 +4,8 @@ import style from './Orders.module.css';
 import { OrderProduct } from '../OrderProducts/OrderProduct';
 import { DeleteModal } from '../DeleteModal/DeleteModal';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { selectOrder } from '../../features/ordersSlice';
+import { addProductToOrder, selectOrder } from '../../features/ordersSlice';
+import { Product } from '../../types/product.type';
 
 export const Orders = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -26,6 +27,30 @@ export const Orders = () => {
   const OpenDeleteModal = (id: number) => {
     setModalShow(true)
     setDeleteOrderId(id)
+  }
+
+  const product: Product = {
+    id: Math.floor(Math.random() * 100),
+    serialNumber: '90LM0500-B01370',
+    isNew: 1,
+    photo: 'https://content.rozetka.com.ua/goods/images/big_tile/18307112.jpg',
+    title: 'Asus TUF Gaming VG27AQ',
+    type: 'Monitors',
+    specification: 'Specification 1',
+    guarantee: {
+      start: '2017-06-29 12:09:33',
+      end: '2017-06-29 12:09:33'
+    },
+    price: [
+      { value: 100, symbol: 'USD', isDefault: 0 },
+      { value: 2600, symbol: 'UAH', isDefault: 1 }
+    ],
+    order: 1,
+    date: '2017-06-29 12:09:33'
+  }
+
+  const handleAddProductToOrder = () => {
+    dispatch(addProductToOrder(product))
   }
 
   return (
@@ -52,14 +77,14 @@ export const Orders = () => {
           </div>
           <div hidden={selectedOrder === 0} className={style.order_products}>
             <div className={style.order_title}>Long too long order name Long too long order name</div>
-            <div className={style.order_add__wrapper}>
+            <div onClick={handleAddProductToOrder} className={style.order_add__wrapper}>
               <div className={style.add_order}>
                 +
               </div>
               <p className={style.add_order__title}>Add product</p>
             </div>
             <div>
-              {orderProducts?.map((product) => <OrderProduct product={product} />)}
+              {orderProducts?.map((product) => <OrderProduct key={product.id} product={product} />)}
             </div>
             <div onClick={handleCloseOrder} className={style.products_close}>X</div>
           </div>
