@@ -43,5 +43,5 @@ export const OrderItem: FC<Props> = ({ order, handleOpenOrder, selectedOrder, se
         &gt;
       </div>
     </div >
-  )
-}
+  );
+};

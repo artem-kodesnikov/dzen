@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Container, Navbar, Form, FormControl } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { TopMenu } from '../TopMenu/TopMenu';
@@ -22,5 +22,5 @@ export const Header = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
-}
+  );
+};

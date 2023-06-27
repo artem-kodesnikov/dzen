@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { Image, Nav } from 'react-bootstrap';
 import { NavigationMenu } from '../NavigationMenu/NavigationMenu';
-import style from './NavSideBar.module.css'
+import style from './NavSideBar.module.css';
 
 export const NavSideBar = () => {
   return (
@@ -12,5 +12,5 @@ export const NavSideBar = () => {
       </div>
       <NavigationMenu />
     </Nav>
-  )
-}
+  );
+};

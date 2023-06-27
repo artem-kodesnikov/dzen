@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import React,{ FC } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { orders } from '../../fake-data/data'
+import { orders } from '../../fake-data/data';
 import { useAppDispatch } from '../../store/hooks';
-import style from './DeleteModal.module.css'
+import style from './DeleteModal.module.css';
 import { deleteOrder } from '../../features/ordersSlice';
 
 type Props = {
@@ -13,18 +13,18 @@ type Props = {
 }
 
 export const DeleteModal: FC<Props> = ({ setModalShow, modalShow, deleteOrderId }) => {
-  const order = orders.find((order) => order.id === deleteOrderId)
-  const dispatch = useAppDispatch()
+  const order = orders.find((order) => order.id === deleteOrderId);
+  const dispatch = useAppDispatch();
 
   const handleDeleteOrder = async () => {
     try {
-      dispatch(deleteOrder(deleteOrderId))
+      dispatch(deleteOrder(deleteOrderId));
     } catch (error) {
-      console.log(error)
+      console.log(error);
     } finally {
-      setModalShow(false)
+      setModalShow(false);
     }
-  }
+  };
   return (
     <Modal
       show={modalShow}
@@ -54,4 +54,4 @@ export const DeleteModal: FC<Props> = ({ setModalShow, modalShow, deleteOrderId 
       </Modal.Footer>
     </Modal>
   );
-}
+};

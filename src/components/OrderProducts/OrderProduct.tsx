@@ -12,8 +12,8 @@ export const OrderProduct: FC<Props> = ({ product }) => {
   const dispatch = useAppDispatch();
 
   const handleDeleteProduct = () => {
-    dispatch(removeProductFromOrder(product.id))
-  }
+    dispatch(removeProductFromOrder(product.id));
+  };
   return (
     <>
       <div className={style.product_wrapper}>
@@ -36,5 +36,5 @@ export const OrderProduct: FC<Props> = ({ product }) => {
       </div>
       <div className={style.divider}></div>
     </>
-  )
-}
+  );
+};

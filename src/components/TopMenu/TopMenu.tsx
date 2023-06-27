@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { Nav } from 'react-bootstrap'
-import style from './topmenu.module.css'
+import React, { useEffect, useState } from 'react';
+import { Nav } from 'react-bootstrap';
+import style from './topmenu.module.css';
 
 export const TopMenu = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -40,5 +40,5 @@ export const TopMenu = () => {
         </Nav.Item>
       </div>
     </Nav>
-  )
-}
+  );
+};

@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import React from 'react'
+import React from 'react';
 import { Orders } from '../components/Orders/Orders';
 import { Products } from '../components/Products/Products';
 import { HomePage } from '../components/HomePage/HomePage';
@@ -22,5 +22,5 @@ export const MainRoutes = () => {
         element={<Products />}
       />
     </Routes>
-  )
-}
+  );
+};

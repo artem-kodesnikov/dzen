@@ -15,5 +15,5 @@ export const NavigationMenu = () => {
         Products
       </NavLink>
     </>
-  )
-}
+  );
+};

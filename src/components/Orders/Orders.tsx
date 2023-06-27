@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { OrderItem } from '../SelectedItem/OrderItem';
 import style from './Orders.module.css';
-import { OrderProduct } from '../OrderProducts/OrderProduct';
 import { DeleteModal } from '../DeleteModal/DeleteModal';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { addProductToOrder, selectOrder } from '../../features/ordersSlice';
 import { Product } from '../../types/product.type';
+import { OrderProductList } from '../OrderProductsList/OrderProductList';
 
 export const Orders = () => {
   const [modalShow, setModalShow] = useState(false);
   const [deleteOrderId, setDeleteOrderId] = useState(0);
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
   const orders = useAppSelector((state) => state.orders.orders);
   const selectedOrder = useAppSelector((state) => state.orders.selectedOrder);
 
-  const orderProducts = orders.find((order) => order.id === selectedOrder)?.products
+  const orderProducts = orders.find((order) => order.id === selectedOrder)?.products;
 
   const handleOpenOrder = (id: number) => {
     dispatch(selectOrder(id));
@@ -25,9 +25,9 @@ export const Orders = () => {
   };
 
   const OpenDeleteModal = (id: number) => {
-    setModalShow(true)
-    setDeleteOrderId(id)
-  }
+    setModalShow(true);
+    setDeleteOrderId(id);
+  };
 
   const product: Product = {
     id: Math.floor(Math.random() * 100),
@@ -47,11 +47,11 @@ export const Orders = () => {
     ],
     order: 1,
     date: '2017-06-29 12:09:33'
-  }
+  };
 
   const handleAddProductToOrder = () => {
-    dispatch(addProductToOrder(product))
-  }
+    dispatch(addProductToOrder(product));
+  };
 
   return (
     <div className={style.orders_wrapper}>
@@ -75,19 +75,12 @@ export const Orders = () => {
               />
             )}
           </div>
-          <div hidden={selectedOrder === 0} className={style.order_products}>
-            <div className={style.order_title}>Long too long order name Long too long order name</div>
-            <div onClick={handleAddProductToOrder} className={style.order_add__wrapper}>
-              <div className={style.add_order}>
-                +
-              </div>
-              <p className={style.add_order__title}>Add product</p>
-            </div>
-            <div>
-              {orderProducts?.map((product) => <OrderProduct key={product.id} product={product} />)}
-            </div>
-            <div onClick={handleCloseOrder} className={style.products_close}>X</div>
-          </div>
+          <OrderProductList
+            orderProducts={orderProducts}
+            selectedOrder={selectedOrder}
+            addProduct={handleAddProductToOrder}
+            handleCloseOrder={handleCloseOrder}
+          />
           <DeleteModal
             modalShow={modalShow}
             setModalShow={setModalShow}
@@ -96,5 +89,5 @@ export const Orders = () => {
         </div>
       </div>
     </div>
-  )
+  );
 };
