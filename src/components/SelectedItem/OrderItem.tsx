@@ -17,8 +17,8 @@ export const OrderItem: FC<Props> = ({ order, handleOpenOrder, selectedOrder }) 
   const totalUsd = order.products.reduce((acc, cur) => acc + cur.price[0].value, 0);
   const totalUah = order.products.reduce((acc, cur) => acc + cur.price[1].value, 0);
   return (
-    <div onClick={() => handleOpenOrder(order.id)} className={style.order_container}>
-      <p hidden={selectedOrder > 0} className={style.order_title}>
+    <div onClick={() => selectedOrder > 0 ? handleOpenOrder(order.id) : null} className={style.order_container}>
+      <p onClick={() => handleOpenOrder(order.id)} hidden={selectedOrder > 0} className={style.order_title}>
         {order.title}
       </p>
       <div className={style.order_list__icon}>
@@ -40,6 +40,6 @@ export const OrderItem: FC<Props> = ({ order, handleOpenOrder, selectedOrder }) 
       <div className={style.active_arrow} hidden={selectedOrder !== order.id}>
         &gt;
       </div>
-    </div>
+    </div >
   )
 }

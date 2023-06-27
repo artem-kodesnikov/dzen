@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { OrderItem } from '../SelectedItem/OrderItem';
 import style from './Orders.module.css';
 import { orders } from '../../fake-data/data'
-import { OrderProducts } from '../OrderProducts/OrderProducts';
+import { OrderProduct } from '../OrderProducts/OrderProduct';
 
 export const Orders = () => {
   const [selectedOrder, setSelectedOrder] = useState(0);
@@ -35,14 +35,18 @@ export const Orders = () => {
               />
             )}
           </div>
-          <div hidden={selectedOrder === 0} onClick={handleCloseOrder} className={style.order_products}>
-            <div>
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. Nihil anim keffiyeh
-              helvetica, craft beer labore wes anderson cred nesciunt sapiente
-              ea proident.
-              {orderProducts?.map((product) => <OrderProducts product={product} />)}
+          <div hidden={selectedOrder === 0} className={style.order_products}>
+            <div className={style.order_title}>Long too long order name Long too long order name</div>
+            <div className={style.order_add__wrapper}>
+              <div className={style.add_order}>
+                +
+              </div>
+              <p className={style.add_order__title}>Add product</p>
             </div>
+            <div>
+              {orderProducts?.map((product) => <OrderProduct product={product} />)}
+            </div>
+            <div onClick={handleCloseOrder} className={style.products_close}>X</div>
           </div>
         </div>
       </div>

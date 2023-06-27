@@ -25,10 +25,10 @@ export const orders = [
 export const products = [
   {
     id: 1,
-    serialNumber: 1234,
+    serialNumber: '90LM0500-B01370',
     isNew: 1,
-    photo: 'pathToFile.jpg',
-    title: 'Product 1',
+    photo: 'https://content.rozetka.com.ua/goods/images/big_tile/18307112.jpg',
+    title: 'Asus TUF Gaming VG27AQ',
     type: 'Monitors',
     specification: 'Specification 1',
     guarantee: {
@@ -44,10 +44,10 @@ export const products = [
   },
   {
     id: 2,
-    serialNumber: 1234,
+    serialNumber: '90LM0500-B01370',
     isNew: 1,
-    photo: 'pathToFile.jpg',
-    title: 'Product 1',
+    photo: 'https://content2.rozetka.com.ua/goods/images/big_tile/324436566.png',
+    title: 'Product 2',
     type: 'Monitors',
     specification: 'Specification 1',
     guarantee: {
@@ -66,9 +66,9 @@ export const products = [
 export const products2 = [
   {
     id: 1,
-    serialNumber: 1234,
+    serialNumber: '90LM0500-B01370',
     isNew: 1,
-    photo: 'pathToFile.jpg',
+    photo: 'https://content.rozetka.com.ua/goods/images/big_tile/18307112.jpg',
     title: 'Product 1',
     type: 'Monitors',
     specification: 'Specification 1',
@@ -85,9 +85,9 @@ export const products2 = [
   },
   {
     id: 2,
-    serialNumber: 1234,
+    serialNumber: '90LM0500-B01370',
     isNew: 1,
-    photo: 'pathToFile.jpg',
+    photo: 'https://content.rozetka.com.ua/goods/images/big_tile/18307112.jpg',
     title: 'Product 12',
     type: 'Monitors',
     specification: 'Specification 1',
@@ -104,9 +104,9 @@ export const products2 = [
   },
   {
     id: 3,
-    serialNumber: 1234,
+    serialNumber: '90LM0500-B01370',
     isNew: 1,
-    photo: 'pathToFile.jpg',
+    photo: 'https://content2.rozetka.com.ua/goods/images/big_tile/324436566.png',
     title: 'Product 13',
     type: 'Monitors',
     specification: 'Specification 1',
