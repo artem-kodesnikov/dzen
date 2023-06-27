@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { OrderItem } from '../SelectedItem/OrderItem';
+import { OrderItem } from '../OrderItem/OrderItem';
 import style from './Orders.module.css';
-import { DeleteModal } from '../DeleteModal/DeleteModal';
+import { DeleteModal } from '../common/DeleteModal/DeleteModal';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { addProductToOrder, selectOrder } from '../../features/ordersSlice';
 import { Product } from '../../types/product.type';
@@ -61,7 +61,7 @@ export const Orders = () => {
           <p className={style.orders_total}>Orders / {orders.length}</p>
         </div>
         <div
-          className={`${style.container_container} ${(selectedOrder > 0) ? style.selectedItem : style.selectedItemw}`}
+          className={`${style.order_container} ${(selectedOrder > 0) ? style.selectedItem : style.selectedItem_secondary}`}
         >
           <div className={style.order_row}>
             {orders.map((order) =>

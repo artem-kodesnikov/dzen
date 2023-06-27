@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import React from 'react';
 import { Orders } from '../components/Orders/Orders';
-import { Products } from '../components/Products/Products';
 import { HomePage } from '../components/HomePage/HomePage';
+import { ProductPage } from '../components/ProductPage/ProductPage';
 
 export const MainRoutes = () => {
   return (
@@ -19,7 +19,7 @@ export const MainRoutes = () => {
       />
       <Route
         path='/Products'
-        element={<Products />}
+        element={<ProductPage />}
       />
     </Routes>
   );

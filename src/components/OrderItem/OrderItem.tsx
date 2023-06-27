@@ -11,7 +11,7 @@ type Props = {
   handleDelete: (id: number) => void
 }
 
-export const OrderItem: FC<Props> = ({ order, handleOpenOrder, selectedOrder, setModalShow, handleDelete }) => {
+export const OrderItem: FC<Props> = ({ order, handleOpenOrder, selectedOrder, handleDelete }) => {
   const date = order.date.split(' ')[0].split('-');
   const day = date[2];
   const month = months.find((el) => el.id === date[1])?.value.slice(0, 3);

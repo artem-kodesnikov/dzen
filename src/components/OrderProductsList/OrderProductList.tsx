@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Product } from '../../types/product.type';
-import { OrderProduct } from '../OrderProducts/OrderProduct';
+import { OrderProduct } from '../OrderProduct/OrderProduct';
 import style from './OrderProductList.module.css';
 
 type Props = {

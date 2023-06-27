@@ -1,10 +1,10 @@
 import React,{ FC } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { orders } from '../../fake-data/data';
-import { useAppDispatch } from '../../store/hooks';
+import { orders } from '../../../fake-data/data';
+import { useAppDispatch } from '../../../store/hooks';
 import style from './DeleteModal.module.css';
-import { deleteOrder } from '../../features/ordersSlice';
+import { deleteOrder } from '../../../features/ordersSlice';
 
 type Props = {
   setModalShow: (value: boolean) => void;

@@ -24,9 +24,9 @@ export const orders = [
 
 export const products = [
   {
-    id: 1,
+    id: 4,
     serialNumber: '90LM0500-B01370',
-    isNew: 1,
+    isNew: 0,
     photo: 'https://content.rozetka.com.ua/goods/images/big_tile/18307112.jpg',
     title: 'Asus TUF Gaming VG27AQ',
     type: 'Monitors',
@@ -43,7 +43,7 @@ export const products = [
     date: '2017-06-29 12:09:33'
   },
   {
-    id: 2,
+    id: 5,
     serialNumber: '90LM0500-B01370',
     isNew: 1,
     photo: 'https://content2.rozetka.com.ua/goods/images/big_tile/324436566.png',

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import './App.css';
-import { Header } from './components/Header/Header';
-import { NavSideBar } from './components/NavSideBar/NavSideBar';
+import { Header } from './components/common/Header/Header';
+import { NavSideBar } from './components/common/NavSideBar/NavSideBar';
 import { MainRoutes } from './routes/routes';
 
 function App() {
