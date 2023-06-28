@@ -11,7 +11,7 @@
 
 .orders_plus__icon {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   height: 35px;
   width: 35px;
