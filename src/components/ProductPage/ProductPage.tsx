@@ -15,16 +15,16 @@ export const ProductPage = () => {
   const filteredProducts = filter === FilterOptions.All
     ? products
     : products.filter(product => product.type === filter);
-
-  const handleCategoryChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    dispatch(setFilter(event.target.value));
+    
+    const handleCategoryChange = (event: ChangeEvent<HTMLSelectElement>) => {
+      dispatch(setFilter(event.target.value));
   };
 
   return (
     <div className={style.products_wrapper}>
       <div className={style.products_container}>
         <div className={style.products_total__container}>
-          <p className={style.products_total}>Products / {products.length}</p>
+          <p className={style.products_total}>Products / {filteredProducts.length}</p>
           <Form.Select 
             className={style.products_filter}
             value={filter} 
@@ -48,8 +48,8 @@ export const ProductPage = () => {
                 exitActive: style.fadeExitActive,
                 appear: style.fadeAppear,
                 appearActive: style.fadeAppearActive,
-              }} timeout={300}>
-              
+              }} timeout={300}
+              >
                 <ProductItem product={product} />
               </CSSTransition>
             ))}

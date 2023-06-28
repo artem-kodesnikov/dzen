@@ -1,7 +1,7 @@
 {
   "name": "dzentest",
   "version": "0.1.0",
-  "homepage": "https://artem-kodesnikov.github.io/dzen/",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
