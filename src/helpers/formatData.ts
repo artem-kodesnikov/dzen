@@ -15,9 +15,5 @@ export const formatDayDate = (date: string) => {
   const month = months.find((month) => month.id === formatedDate.split('-')[1])?.value.slice(0,3);
   const year = formatedDate.split('-')[0];
 
-
-
   return `${day}/${month}/${year}`;
 };
-
-console.log(formatDayDate('2017-06-29 12:09:33'));
