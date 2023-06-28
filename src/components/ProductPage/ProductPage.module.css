@@ -1,10 +1,10 @@
-.orders_wrapper {
+.products_wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.orders_container {
+.products_container {
   width: 100%;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -12,58 +12,77 @@
 }
 
 
-.orders_container::-webkit-scrollbar {
+.products_container::-webkit-scrollbar {
   height: 10px;
   background-color: #d3d3d3;
 }
 
-.orders_container::-webkit-scrollbar-thumb {
+.products_container::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: 10px;
 }
 
-.orders_container::-webkit-scrollbar-thumb:hover {
+.products_container::-webkit-scrollbar-thumb:hover {
   background-color: #555;
 }
 
-.orders_container::-webkit-scrollbar-track {
+.products_container::-webkit-scrollbar-track {
   background-color: #d3d3d3;
   border: 1px solid #888;
   border-radius: 10px;
 }
 
-.orders_total__container {
+.products_total__container {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   margin-bottom: 30px;
 }
 
-.orders_total {
+.products_total {
   font-size: 26px;
   font-weight: 500;
 }
 
-.order_item_wrapper {
-  width: 100%;
-  transition: width 0.5s ease;
-}
-
-.unselectedItem {
-  width: 100%;
-  transition: width 0.5s ease;
-}
-
-.order_container {
-  width: 2000px;
+.product_container {
   display: flex;
   gap: 30px;
 }
 
-.selectedItemw > .items_content_container{
-  opacity: 0;
+.products_filter {
+  width: fit-content;
+  margin-left: 20px;
 }
 
-.order_row {
-  width: 100%;
-  transition: all 0.5s ease;
+.fadeEnter {
+  opacity: 0;
+  transform: translateY(-20px);
 }
+
+.fadeEnterActive {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fadeExit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadeExitActive {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fadeAppear {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.fadeAppearActive {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+

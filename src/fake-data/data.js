@@ -24,6 +24,25 @@ export const orders = [
 
 export const products = [
   {
+    id: 6,
+    serialNumber: 'MLPF3HU/A-B01370',
+    isNew: 0,
+    photo: 'https://content1.rozetka.com.ua/goods/images/big/221214139.jpg',
+    title: 'Apple iPhone 13 128GB Midnight',
+    type: 'Phone',
+    specification: 'Specification 2',
+    guarantee: {
+      start: '2017-06-29 12:09:33',
+      end: '2017-06-29 12:09:33'
+    },
+    price: [
+      { value: 1000, symbol: 'USD', isDefault: 0 },
+      { value: 26000, symbol: 'UAH', isDefault: 1 }
+    ],
+    order: 1,
+    date: '2017-06-29 12:09:33'
+  },
+  {
     id: 4,
     serialNumber: '90LM0500-B01370',
     isNew: 0,

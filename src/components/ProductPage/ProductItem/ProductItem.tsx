@@ -11,7 +11,6 @@ export const ProductItem: FC<Props> = ({ product }) => {
   const guaranteeStart = formatDate(product.guarantee.start);
   const guaranteeEmd = formatDate(product.guarantee.end);
   const orderDate = formatDayDate(product.date);
-  console.log(orderDate);
   return (
     <>
       <div className={style.product_wrapper}>
